@@ -4,10 +4,27 @@ signal level_complete
 
 const WORLD_LEVEL = 1
 
+@onready var collectibles = get_tree().get_nodes_in_group("Collectible")
+@onready var target = len(collectibles)
+var collected = 0
+
+
+func _ready():
+	_update_fruit_count()
+
+
+func _update_fruit_count():
+	$Objective/FruitCount.text = "{collected}/{target}".format(
+		{"collected": collected, "target": target}
+	)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var collectibles = get_tree().get_nodes_in_group("Collectible")
+	collectibles = get_tree().get_nodes_in_group("Collectible")
+	# increment number of collected fruits
+	collected = target - len(collectibles)
+	_update_fruit_count()
 
 	if len(collectibles) == 0:
 		level_complete.emit()

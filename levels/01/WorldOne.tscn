@@ -562,6 +562,22 @@ texture_normal = ExtResource("7_0r6xr")
 [node name="Popup" parent="." instance=ExtResource("8_e2wld")]
 visible = false
 
+[node name="Objective" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Objective"]
+offset_left = 863.0
+offset_top = 14.0
+offset_right = 975.0
+offset_bottom = 40.0
+text = "Collected Fruit :"
+
+[node name="FruitCount" type="Label" parent="Objective"]
+offset_left = 988.0
+offset_top = 14.0
+offset_right = 1028.0
+offset_bottom = 40.0
+text = "1/2"
+
 [connection signal="level_complete" from="." to="FrogMan" method="handle_on_level_complete"]
 [connection signal="pressed" from="BackButton/back_button" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="RestartButton/restart_button" to="." method="_on_restart_button_pressed"]
