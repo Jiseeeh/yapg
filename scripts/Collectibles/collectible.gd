@@ -9,6 +9,8 @@ func handle_on_body_entered(body: Node2D):
 	if body.name == "FrogMan":
 		# TODO: increment player gold (Game manager)
 		print("Collected gold: %s" % str(collectible_gold))
+		GameManager.player_gold += collectible_gold
+		GameManager.save_game()
 		collectible_tween()
 
 func collectible_tween() -> void:
