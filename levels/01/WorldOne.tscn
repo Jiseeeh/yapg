@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpacin0uxlb77"]
+[gd_scene load_steps=15 format=3 uid="uid://cfngvh3u0h3go"]
 
 [ext_resource type="PackedScene" uid="uid://bpootygaddh0o" path="res://characters/frog_man.tscn" id="1_wooao"]
+[ext_resource type="Script" path="res://levels/01/WorldOne.gd" id="1_ypdtr"]
 [ext_resource type="Texture2D" uid="uid://cupkqbgpubfx3" path="res://art/Terrain/Terrain (16x16).png" id="2_11a5m"]
 [ext_resource type="PackedScene" uid="uid://6lwep2tkx45m" path="res://collectibles/Apple/apple.tscn" id="3_2k27i"]
 [ext_resource type="PackedScene" uid="uid://c4cfaml7kqfi4" path="res://collectibles/Banana/banana.tscn" id="4_v688e"]
+[ext_resource type="Texture2D" uid="uid://c0k56t2tlfbia" path="res://art/Buttons/Back.png" id="6_7agrq"]
+[ext_resource type="Texture2D" uid="uid://0qlarxuihfke" path="res://art/Buttons/Restart.png" id="7_0r6xr"]
+[ext_resource type="PackedScene" uid="uid://b47yfx7iq58vy" path="res://hud/popup.tscn" id="8_e2wld"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_2nq8s"]
 tile_data = PackedInt32Array(0, 983040, 4, 65536, 983040, 5, 131072, 983040, 5, 196608, 983040, 5, 262144, 983040, 5, 327680, 983040, 5, 393216, 983040, 5, 458752, 983040, 5, 524288, 983040, 5, 589824, 983040, 5, 655360, 983040, 5, 720896, 983040, 5, 786432, 983040, 5, 851968, 983040, 5, 917504, 983040, 5, 983040, 983040, 5, 1048576, 983040, 5, 1114112, 983040, 5, 1179648, 983040, 5, 1245184, 983040, 5, 1310720, 983040, 5, 1376256, 983040, 5, 1441792, 983040, 5, 1507328, 983040, 5, 1572864, 983040, 5, 1638400, 983040, 5, 1703936, 983040, 5, 1769472, 983040, 5, 1835008, 983040, 5, 1900544, 983040, 5, 1966080, 983040, 5, 2031616, 983040, 6)
@@ -512,11 +516,12 @@ pattern_2 = SubResource("TileMapPattern_y0ikd")
 pattern_3 = SubResource("TileMapPattern_epbxr")
 
 [node name="WorldOne" type="Node2D"]
+script = ExtResource("1_ypdtr")
 metadata/_edit_vertical_guides_ = []
 metadata/_edit_horizontal_guides_ = []
 
 [node name="FrogMan" parent="." instance=ExtResource("1_wooao")]
-position = Vector2(28, 400)
+position = Vector2(34, 280)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(75, 484)
@@ -537,3 +542,26 @@ position = Vector2(88, 71)
 
 [node name="Banana" parent="." instance=ExtResource("4_v688e")]
 position = Vector2(1096, 130)
+
+[node name="BackButton" type="CanvasLayer" parent="."]
+offset = Vector2(1092.33, 0)
+transform = Transform2D(1, 0, 0, 1, 1092.33, 0)
+
+[node name="back_button" type="TouchScreenButton" parent="BackButton"]
+position = Vector2(4.66504, 2)
+scale = Vector2(3.62233, 3.3125)
+texture_normal = ExtResource("6_7agrq")
+
+[node name="RestartButton" type="CanvasLayer" parent="."]
+
+[node name="restart_button" type="TouchScreenButton" parent="RestartButton"]
+position = Vector2(1038, 4)
+scale = Vector2(2.47619, 2.22727)
+texture_normal = ExtResource("7_0r6xr")
+
+[node name="Popup" parent="." instance=ExtResource("8_e2wld")]
+visible = false
+
+[connection signal="level_complete" from="." to="FrogMan" method="_on_world_one_level_complete"]
+[connection signal="pressed" from="BackButton/back_button" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="pressed" from="RestartButton/restart_button" to="." method="_on_restart_button_pressed"]
