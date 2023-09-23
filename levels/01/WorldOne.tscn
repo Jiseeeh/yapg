@@ -562,6 +562,6 @@ texture_normal = ExtResource("7_0r6xr")
 [node name="Popup" parent="." instance=ExtResource("8_e2wld")]
 visible = false
 
-[connection signal="level_complete" from="." to="FrogMan" method="_on_world_one_level_complete"]
+[connection signal="level_complete" from="." to="FrogMan" method="handle_on_level_complete"]
 [connection signal="pressed" from="BackButton/back_button" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="RestartButton/restart_button" to="." method="_on_restart_button_pressed"]
