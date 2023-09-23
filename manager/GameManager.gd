@@ -4,7 +4,7 @@ var player_health: int = 10
 var player_gold: int = 0
 var current_world_level: int = 1
 
-const SAVE_PATH = "users://savegame.bin"
+const SAVE_PATH = "user://savegame.bin"
 
 
 func save_game():
@@ -13,10 +13,10 @@ func save_game():
 	var data = {
 		"player_health": player_health,
 		"player_gold": player_gold,
+		"current_world_level": current_world_level,
 	}
 
 	var json_str = JSON.stringify(data)
-
 	file.store_line(json_str)
 
 
@@ -29,3 +29,4 @@ func load_game():
 			if current_line:
 				player_health = current_line["player_health"]
 				player_gold = current_line["player_gold"]
+				current_world_level = current_line["current_world_level"]
