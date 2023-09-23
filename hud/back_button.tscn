@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxaluk6t4dkyd"]
+
+[ext_resource type="Texture2D" uid="uid://c0k56t2tlfbia" path="res://art/Buttons/Back.png" id="1_kp0f7"]
+
+[node name="BackButton" type="CanvasLayer"]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(2, -2)
+scale = Vector2(5.6, 4.875)
+texture_normal = ExtResource("1_kp0f7")
