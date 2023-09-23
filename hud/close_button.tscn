@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ul70ghy6y7qa"]
+
+[ext_resource type="Texture2D" uid="uid://bygjdsb6y8v5q" path="res://art/Buttons/Close.png" id="1_5nb46"]
+
+[node name="CloseButton" type="CanvasLayer"]
+
+[node name="close_button" type="TouchScreenButton" parent="."]
+scale = Vector2(4, 3.563)
+texture_normal = ExtResource("1_5nb46")
