@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bpootygaddh0o"]
+[gd_scene load_steps=47 format=3 uid="uid://bpootygaddh0o"]
 
 [ext_resource type="Script" path="res://characters/frog_man.gd" id="1_52gc7"]
 [ext_resource type="Texture2D" uid="uid://dnrn0xv3ljce1" path="res://art/FrogMan/Idle (32x32).png" id="1_a3sy2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bjgtojvhqtn60" path="res://art/FrogMan/Hit (32x32).png" id="2_cuevg"]
 [ext_resource type="Texture2D" uid="uid://8v560hdycq4m" path="res://art/FrogMan/Jump (32x32).png" id="4_np4a1"]
 [ext_resource type="Texture2D" uid="uid://bq0nv2b4jtrmi" path="res://art/FrogMan/Run (32x32).png" id="5_e8ldt"]
+[ext_resource type="PackedScene" uid="uid://sxw3om14llim" path="res://hud/controls.tscn" id="7_ocd3v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gq5vr"]
 height = 26.0
@@ -442,6 +443,7 @@ shape = SubResource("CapsuleShape2D_gq5vr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gv51v")
 animation = &"Hit"
+frame = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.666, 1.666)
@@ -454,3 +456,5 @@ autoplay = "Idle"
 libraries = {
 "": SubResource("AnimationLibrary_ixqnv")
 }
+
+[node name="Controls" parent="." instance=ExtResource("7_ocd3v")]
