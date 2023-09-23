@@ -8,30 +8,32 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
+
 func _physics_process(delta):
 	# Add gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
+
 	# prevent jumping again if not on floor
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 #		anim_player.play("Jump")
 		velocity.y = JUMP_VELOCITY
-	
+
 	# returns either -1,0, or 1
 	# -1 for left axis, 1 for the right axis and 0 if neither
-	var direction = Input.get_axis("move_left","move_right")
-	
+	var direction = Input.get_axis("move_left", "move_right")
+
 	# if truthy ( 1 or -1 ) move the character
 	if direction:
 		velocity.x = direction * SPEED
 		$AnimatedSprite2D.flip_h = direction < 0
 	# else stop by moving from the curr position to 0
 	else:
-		velocity.x = move_toward(velocity.x,0,SPEED)
-	
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
 	move_and_slide()
 	update_animation()
+
 
 func update_animation():
 	# if not moving
@@ -47,3 +49,7 @@ func update_animation():
 		else:
 			anim_player.play("Jump")
 	# if hit
+
+
+func handle_on_level_complete():
+	set_physics_process(false)
