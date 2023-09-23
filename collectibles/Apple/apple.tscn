@@ -132,7 +132,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q871e"]
 
-[node name="Apple" type="Area2D"]
+[node name="Apple" type="Area2D" groups=["Collectible"]]
 script = ExtResource("1_uax5i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
