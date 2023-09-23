@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://vn5j2qcxwame"]
+
+[ext_resource type="Texture2D" uid="uid://0qlarxuihfke" path="res://art/Buttons/Restart.png" id="1_jn465"]
+
+[node name="RestartButton" type="CanvasLayer"]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+scale = Vector2(4, 3.563)
+texture_normal = ExtResource("1_jn465")
