@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 
-func _physics_process(delta):
+func _process(delta):
 	# Add gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -52,4 +52,4 @@ func update_animation():
 
 
 func handle_on_level_complete():
-	set_physics_process(false)
+	set_process(false)
