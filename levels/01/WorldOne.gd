@@ -4,29 +4,18 @@ signal level_complete
 
 const WORLD_LEVEL = 1
 
-@onready var collectibles = get_tree().get_nodes_in_group("Collectible")
-@onready var target = len(collectibles)
-var collected = 0
+var level_handler = LevelHandler.new(self)
 
 
 func _ready():
-	_update_fruit_count()
-
-
-func _update_fruit_count():
-	$Objective/FruitCount.text = "{collected}/{target}".format(
-		{"collected": collected, "target": target}
-	)
+	level_handler.update_collected_fruits($Objective/FruitCount)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	collectibles = get_tree().get_nodes_in_group("Collectible")
-	# increment number of collected fruits
-	collected = target - len(collectibles)
-	_update_fruit_count()
+	level_handler.update_collected_fruits($Objective/FruitCount)
 
-	if len(collectibles) == 0:
+	if level_handler.has_collected_all_fruits():
 		level_complete.emit()
 
 		# increment the current world level only if the current level is the current world level
