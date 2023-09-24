@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bpootygaddh0o"]
+[gd_scene load_steps=49 format=3 uid="uid://bpootygaddh0o"]
 
 [ext_resource type="Script" path="res://characters/frog_man.gd" id="1_52gc7"]
 [ext_resource type="Texture2D" uid="uid://dnrn0xv3ljce1" path="res://art/FrogMan/Idle (32x32).png" id="1_a3sy2"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bjgtojvhqtn60" path="res://art/FrogMan/Hit (32x32).png" id="2_cuevg"]
 [ext_resource type="Texture2D" uid="uid://8v560hdycq4m" path="res://art/FrogMan/Jump (32x32).png" id="4_np4a1"]
 [ext_resource type="Texture2D" uid="uid://bq0nv2b4jtrmi" path="res://art/FrogMan/Run (32x32).png" id="5_e8ldt"]
-[ext_resource type="PackedScene" uid="uid://sxw3om14llim" path="res://hud/controls.tscn" id="7_ocd3v"]
+[ext_resource type="Texture2D" uid="uid://bobu0ofl21jv6" path="res://art/Buttons/left.png" id="7_mt823"]
+[ext_resource type="Texture2D" uid="uid://cc7od4y7p7vwy" path="res://art/Buttons/right.png" id="8_ui0tb"]
+[ext_resource type="Texture2D" uid="uid://nd7f8hbdvk5b" path="res://art/Buttons/up.png" id="9_lgc23"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gq5vr"]
 height = 26.0
@@ -457,4 +459,22 @@ libraries = {
 "": SubResource("AnimationLibrary_ixqnv")
 }
 
-[node name="Controls" parent="." instance=ExtResource("7_ocd3v")]
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="Left" type="TouchScreenButton" parent="Controls"]
+position = Vector2(9, 532)
+scale = Vector2(7.25, 7.1875)
+texture_normal = ExtResource("7_mt823")
+action = "move_left"
+
+[node name="Right" type="TouchScreenButton" parent="Controls"]
+position = Vector2(177, 532)
+scale = Vector2(7.375, 7.31249)
+texture_normal = ExtResource("8_ui0tb")
+action = "move_right"
+
+[node name="Jump" type="TouchScreenButton" parent="Controls"]
+position = Vector2(1032, 532)
+scale = Vector2(7.25, 7.188)
+texture_normal = ExtResource("9_lgc23")
+action = "jump"
