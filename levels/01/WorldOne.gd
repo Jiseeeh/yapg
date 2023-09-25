@@ -8,12 +8,12 @@ var level_handler = LevelHandler.new(self)
 
 
 func _ready():
-	level_handler.update_collected_fruits($Objective/FruitCount)
+	level_handler.update_collected_fruits($WorldControls/CollectedFruitsLabel)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	level_handler.update_collected_fruits($Objective/FruitCount)
+	level_handler.update_collected_fruits($WorldControls/CollectedFruitsLabel)
 
 	if level_handler.has_collected_all_fruits():
 		level_complete.emit()
@@ -32,9 +32,11 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://levels/level_select.tscn")
 
 
-func _on_touch_screen_button_pressed():
-	get_tree().change_scene_to_file("res://levels/level_select.tscn")
 
 
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
+
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file("res://levels/level_select.tscn")
