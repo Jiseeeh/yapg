@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4mak3u6wl7u5"]
+
+[ext_resource type="Texture2D" uid="uid://c0k56t2tlfbia" path="res://art/Buttons/Back.png" id="1_71iow"]
+[ext_resource type="Texture2D" uid="uid://0qlarxuihfke" path="res://art/Buttons/Restart.png" id="2_oo2m5"]
+
+[node name="WorldControls" type="CanvasLayer"]
+
+[node name="BackButton" type="CanvasLayer" parent="."]
+
+[node name="back_button" type="TouchScreenButton" parent="BackButton"]
+position = Vector2(1065, 3)
+scale = Vector2(5.6, 4.875)
+texture_normal = ExtResource("1_71iow")
+
+[node name="RestartButton" type="CanvasLayer" parent="."]
+
+[node name="restart_button" type="TouchScreenButton" parent="RestartButton"]
+position = Vector2(976, 6)
+scale = Vector2(3.66667, 3.27273)
+texture_normal = ExtResource("2_oo2m5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 755.0
+offset_top = 30.0
+offset_right = 911.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 21
+text = "Collected Fruit :"
+
+[node name="CollectedFruitsLabel" type="Label" parent="."]
+offset_left = 921.0
+offset_top = 28.0
+offset_right = 961.0
+offset_bottom = 61.0
+theme_override_font_sizes/font_size = 21
+text = "1/2"
