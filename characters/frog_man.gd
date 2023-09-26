@@ -5,11 +5,21 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var hit_cooldown = 1.5
+var elapsed_time_since_last_hit = 0.0
+var is_hit = false
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 
 func _process(delta):
+	if is_hit:
+		print("Cooling down")
+		elapsed_time_since_last_hit += delta
+		if elapsed_time_since_last_hit > hit_cooldown:
+			print("Can be hit again")
+			is_hit = false
+			elapsed_time_since_last_hit = 0.0
+
 	# Add gravity
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -32,6 +42,11 @@ func _process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	var collision = get_last_slide_collision()
+	if not is_hit and collision and collision.get_collider().get_name() == "Spike":
+		is_hit = true
+		print("Got hit")
+
 	update_animation()
 
 
@@ -48,7 +63,6 @@ func update_animation():
 			anim_player.play("Fall")
 		else:
 			anim_player.play("Jump")
-	# if hit
 
 
 func handle_on_level_complete():
