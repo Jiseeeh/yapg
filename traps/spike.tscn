@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv311tkdlwt7l"]
+
+[ext_resource type="Texture2D" uid="uid://dpptbmni81vyo" path="res://art/Traps/Spikes/Idle.png" id="1_pb44r"]
+
+[node name="Spike" type="StaticBody2D"]
+scale = Vector2(1.00211, 1)
+
+[node name="spike" type="Sprite2D" parent="."]
+position = Vector2(15, 15)
+scale = Vector2(1.875, 1.9375)
+texture = ExtResource("1_pb44r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(31.8894, 21)
+scale = Vector2(3.24519, 1)
+polygon = PackedVector2Array(-10.1348, 10, -9.51852, 3, -8.28592, -4, -2.73926, -4, -1.50667, 3, -0.89037, 10)
