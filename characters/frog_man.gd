@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var hit_cooldown = 1.5
+var hit_cooldown = 0.62
 var elapsed_time_since_last_hit = 0.0
 var is_hit = false
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
@@ -51,6 +51,11 @@ func _process(delta):
 
 
 func update_animation():
+	# play animation hit one time only is hit
+	if is_hit:
+		anim_player.play("Hit")
+		return
+
 	# if not moving
 	if velocity == Vector2.ZERO:
 		anim_player.play("Idle")
