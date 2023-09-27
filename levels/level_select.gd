@@ -9,6 +9,7 @@ func _ready():
 
 	for i in range(current_world_level):
 		# increase the alpha value of the unlocked levels
+		# to show that they are unlocked
 		children[i].modulate.a = 255
 
 
