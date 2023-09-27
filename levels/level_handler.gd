@@ -1,3 +1,8 @@
+# A class that handles the collectibles for every level
+# It keeps track of how many collectibles have been collected
+# and how many are left to collect
+# It also checks if all collectibles have been collected
+# and if so, the caller can emit the level_complete signal
 class_name LevelHandler
 
 var collected = 0
