@@ -26,7 +26,6 @@ func _process(delta):
 
 	# prevent jumping again if not on floor
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-#		anim_player.play("Jump")
 		velocity.y = JUMP_VELOCITY
 
 	# returns either -1,0, or 1
