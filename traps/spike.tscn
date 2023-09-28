@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dpptbmni81vyo" path="res://art/Traps/Spikes/Idle.png" id="1_pb44r"]
 
-[node name="Spike" type="StaticBody2D"]
+[node name="Spike" type="StaticBody2D" groups=["Spike"]]
 scale = Vector2(1.00211, 1)
 
 [node name="spike" type="Sprite2D" parent="."]
