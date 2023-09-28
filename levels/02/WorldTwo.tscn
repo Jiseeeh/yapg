@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://buegxr451xur4"]
 
-[ext_resource type="PackedScene" uid="uid://bpootygaddh0o" path="res://characters/frog_man.tscn" id="1_ecwvy"]
+[ext_resource type="PackedScene" uid="uid://bpootygaddh0o" path="res://characters/FrogMan/frog_man.tscn" id="1_ecwvy"]
 [ext_resource type="Texture2D" uid="uid://cupkqbgpubfx3" path="res://art/Terrain/Terrain (16x16).png" id="2_gxua4"]
 [ext_resource type="PackedScene" uid="uid://d4mak3u6wl7u5" path="res://hud/world_controls.tscn" id="3_4a08x"]
 [ext_resource type="PackedScene" uid="uid://b47yfx7iq58vy" path="res://hud/popup.tscn" id="4_vuv8l"]
