@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq0nv2b4jtrmi"
-path="res://.godot/imported/Run (32x32).png-42a6d5388803a8271a3779d8e0016f27.ctex"
+uid="uid://g0e55alt3eny"
+path="res://.godot/imported/Jump (32x32).png-fb85a8772ae54e8c57de59ce1fa5893d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FrogMan/Run (32x32).png"
-dest_files=["res://.godot/imported/Run (32x32).png-42a6d5388803a8271a3779d8e0016f27.ctex"]
+source_file="res://art/Characters/Pink Man/Jump (32x32).png"
+dest_files=["res://.godot/imported/Jump (32x32).png-fb85a8772ae54e8c57de59ce1fa5893d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnrn0xv3ljce1"
-path="res://.godot/imported/Idle (32x32).png-73f1004621b2bd10d6189a25a03ac460.ctex"
+uid="uid://cia0b1qaqde3m"
+path="res://.godot/imported/Double Jump (32x32).png-2c65b4c13a8fba323895c8a8df9de411.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FrogMan/Idle (32x32).png"
-dest_files=["res://.godot/imported/Idle (32x32).png-73f1004621b2bd10d6189a25a03ac460.ctex"]
+source_file="res://art/Characters/FrogMan/Double Jump (32x32).png"
+dest_files=["res://.godot/imported/Double Jump (32x32).png-2c65b4c13a8fba323895c8a8df9de411.ctex"]
 
 [params]
 

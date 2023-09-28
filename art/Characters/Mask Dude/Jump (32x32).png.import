@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8v560hdycq4m"
-path="res://.godot/imported/Jump (32x32).png-0c549f72aa0c8c547b09b00e1a83c2db.ctex"
+uid="uid://obvl4ywhw0id"
+path="res://.godot/imported/Jump (32x32).png-4c00a79ef003e6503d1497f125dd0fee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FrogMan/Jump (32x32).png"
-dest_files=["res://.godot/imported/Jump (32x32).png-0c549f72aa0c8c547b09b00e1a83c2db.ctex"]
+source_file="res://art/Characters/Mask Dude/Jump (32x32).png"
+dest_files=["res://.godot/imported/Jump (32x32).png-4c00a79ef003e6503d1497f125dd0fee.ctex"]
 
 [params]
 

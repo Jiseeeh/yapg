@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfns5um5re40y"
-path="res://.godot/imported/Fall (32x32).png-0f742dd183281aad4588e9c61fb6c5ae.ctex"
+uid="uid://ddcrwgg3yp18s"
+path="res://.godot/imported/Idle (32x32).png-49d528e0a20f4a7a2833fff4a3281ee7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FrogMan/Fall (32x32).png"
-dest_files=["res://.godot/imported/Fall (32x32).png-0f742dd183281aad4588e9c61fb6c5ae.ctex"]
+source_file="res://art/Characters/Pink Man/Idle (32x32).png"
+dest_files=["res://.godot/imported/Idle (32x32).png-49d528e0a20f4a7a2833fff4a3281ee7.ctex"]
 
 [params]
 
