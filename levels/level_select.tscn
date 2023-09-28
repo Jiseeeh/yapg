@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccjmnvr8bndru"]
+[gd_scene load_steps=6 format=3 uid="uid://ccjmnvr8bndru"]
 
 [ext_resource type="Texture2D" uid="uid://bkvvoxtyk2r4q" path="res://art/Levels/01.png" id="1_7k2gq"]
 [ext_resource type="Script" path="res://levels/level_select.gd" id="1_wef2r"]
 [ext_resource type="Texture2D" uid="uid://dou4euea74olp" path="res://art/Levels/02.png" id="2_ah680"]
-[ext_resource type="Texture2D" uid="uid://bkpiqof67okdx" path="res://art/Levels/03.png" id="3_1oy0l"]
-[ext_resource type="Texture2D" uid="uid://8xhnr2nrdeom" path="res://art/Levels/04.png" id="4_pgwpq"]
-[ext_resource type="Texture2D" uid="uid://ct77gg61fte2k" path="res://art/Levels/05.png" id="5_20ck6"]
 [ext_resource type="Texture2D" uid="uid://iji1lwtewy6u" path="res://art/Levels/50.png" id="6_kbhgo"]
 [ext_resource type="Texture2D" uid="uid://c0k56t2tlfbia" path="res://art/Buttons/Back.png" id="8_mst7o"]
 
@@ -14,38 +11,20 @@ script = ExtResource("1_wef2r")
 
 [node name="01" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(112, 109)
-scale = Vector2(6.17105, 6.75)
+position = Vector2(96, 224)
+scale = Vector2(11.3684, 12.4118)
 texture_normal = ExtResource("1_7k2gq")
 
 [node name="02" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(506.625, 109)
-scale = Vector2(6.17105, 6.75)
+position = Vector2(456, 224)
+scale = Vector2(11.368, 12.412)
 texture_normal = ExtResource("2_ah680")
-
-[node name="03" type="TouchScreenButton" parent="."]
-modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(898.625, 109)
-scale = Vector2(6.17105, 6.75)
-texture_normal = ExtResource("3_1oy0l")
-
-[node name="04" type="TouchScreenButton" parent="."]
-modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(114.625, 430.375)
-scale = Vector2(6.17105, 6.75)
-texture_normal = ExtResource("4_pgwpq")
-
-[node name="05" type="TouchScreenButton" parent="."]
-modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(506.625, 430.375)
-scale = Vector2(6.17105, 6.75)
-texture_normal = ExtResource("5_20ck6")
 
 [node name="06" type="TouchScreenButton" parent="."]
 modulate = Color(1, 1, 1, 0.556863)
-position = Vector2(906.625, 430.375)
-scale = Vector2(6.17105, 6.75)
+position = Vector2(816, 224)
+scale = Vector2(11.368, 12.412)
 texture_normal = ExtResource("6_kbhgo")
 
 [node name="BackButton" type="CanvasLayer" parent="."]
@@ -57,8 +36,5 @@ texture_normal = ExtResource("8_mst7o")
 
 [connection signal="pressed" from="01" to="." method="_on__pressed_01"]
 [connection signal="pressed" from="02" to="." method="_on__pressed_02"]
-[connection signal="pressed" from="03" to="." method="_on__pressed_03"]
-[connection signal="pressed" from="04" to="." method="_on__pressed_04"]
-[connection signal="pressed" from="05" to="." method="_on__pressed_05"]
 [connection signal="pressed" from="06" to="." method="_on__pressed_final"]
 [connection signal="pressed" from="BackButton/back_button" to="." method="_on_back_button_pressed"]

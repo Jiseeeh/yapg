@@ -26,21 +26,8 @@ func _on__pressed_02():
 	is_level_unlocked(2)
 
 
-func _on__pressed_03():
-	is_level_unlocked(3)
-
-
-func _on__pressed_04():
-	is_level_unlocked(4)
-
-
-func _on__pressed_05():
-	is_level_unlocked(5)
-
-
 func _on__pressed_final():
 	is_level_unlocked(6)
-
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
