@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const TRAP_GROUPS = ["Saw", "Spike"]  # Add here the groups of the traps that can hit the player
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -42,7 +43,7 @@ func _process(delta):
 
 	move_and_slide()
 	var collision = get_last_slide_collision()
-	if not is_hit and collision and collision.get_collider().get_name() == "Spike":
+	if not is_hit and collision and TRAP_GROUPS.has(collision.get_collider().get_name()):
 		is_hit = true
 		print("Got hit")
 
