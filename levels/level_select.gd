@@ -23,11 +23,13 @@ func _on__pressed_01():
 
 
 func _on__pressed_02():
-	is_level_unlocked(2)
+	if is_level_unlocked(2):
+		get_tree().change_scene_to_file("res://levels/02/WorldTwo.tscn")
 
 
 func _on__pressed_final():
 	is_level_unlocked(6)
+
 
 func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://main.tscn")
