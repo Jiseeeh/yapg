@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d1kh1thsuqlat" path="res://art/Characters/Mask Dude/Run (32x32).png" id="5_34ebx"]
 [ext_resource type="PackedScene" uid="uid://sxw3om14llim" path="res://hud/controls.tscn" id="6_a3g4n"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ep27"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_o52bh"]
 atlas = ExtResource("2_8ho8p")
 region = Rect2(0, 0, 32, 32)
@@ -252,8 +254,6 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ep27"]
-
 [sub_resource type="Animation" id="Animation_a3tiy"]
 resource_name = "Fall"
 length = 0.5
@@ -312,6 +312,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_30xdk"]
 resource_name = "Idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -433,12 +434,12 @@ _data = {
 [node name="MaskDude" type="CharacterBody2D"]
 script = ExtResource("1_4ta7u")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6ep27")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i4nri")
 animation = &"Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_6ep27")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
