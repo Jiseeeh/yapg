@@ -1,7 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://ccwbmc55sxmpw"]
+[gd_scene load_steps=55 format=3 uid="uid://ccwbmc55sxmpw"]
 
 [ext_resource type="Script" path="res://levels/character_select.gd" id="1_8dhid"]
 [ext_resource type="Texture2D" uid="uid://dnrn0xv3ljce1" path="res://art/Characters/FrogMan/Idle (32x32).png" id="1_10itp"]
+[ext_resource type="Texture2D" uid="uid://g46odloc5es0" path="res://art/Characters/shadow.png" id="2_2t8mv"]
 [ext_resource type="Texture2D" uid="uid://cox8cm50kcx31" path="res://art/Characters/Mask Dude/Idle (32x32).png" id="2_ojc20"]
 [ext_resource type="Texture2D" uid="uid://ddcrwgg3yp18s" path="res://art/Characters/Pink Man/Idle (32x32).png" id="3_hgugy"]
 [ext_resource type="Texture2D" uid="uid://d3b46qkoks6mn" path="res://art/Characters/Virtual Guy/Idle (32x32).png" id="4_yfwgj"]
@@ -363,37 +364,54 @@ theme_override_font_sizes/font_size = 46
 text = "Character Select"
 
 [node name="FrogManButton" type="TouchScreenButton" parent="."]
+position = Vector2(80, 248)
+scale = Vector2(0.52, 0.65)
+texture_normal = ExtResource("2_2t8mv")
 
 [node name="FrogMan" type="AnimatedSprite2D" parent="FrogManButton"]
-position = Vector2(176, 296)
-scale = Vector2(7, 8.017)
+position = Vector2(184.615, 73.8461)
+scale = Vector2(13.4615, 12.3338)
 sprite_frames = SubResource("SpriteFrames_dfqqi")
 animation = &"Idle"
 frame_progress = 0.313072
 
 [node name="MaskDudeButton" type="TouchScreenButton" parent="."]
+position = Vector2(312, 248)
+scale = Vector2(0.52, 0.65)
+texture_normal = ExtResource("2_2t8mv")
 
 [node name="MaskDude" type="AnimatedSprite2D" parent="MaskDudeButton"]
-position = Vector2(408, 296)
-scale = Vector2(7, 8.017)
+position = Vector2(184.615, 73.8461)
+scale = Vector2(13.4615, 12.3338)
 sprite_frames = SubResource("SpriteFrames_ri3fx")
 animation = &"Idle"
 frame_progress = 0.678039
 
 [node name="PinkManButton" type="TouchScreenButton" parent="."]
+position = Vector2(560, 248)
+scale = Vector2(0.52, 0.65)
+texture_normal = ExtResource("2_2t8mv")
 
 [node name="PinkMan" type="AnimatedSprite2D" parent="PinkManButton"]
-position = Vector2(664, 296)
-scale = Vector2(7, 8.017)
+position = Vector2(200, 73.8461)
+scale = Vector2(13.4615, 12.3338)
 sprite_frames = SubResource("SpriteFrames_70uox")
 animation = &"Idle"
 frame_progress = 0.636029
 
 [node name="VirtualGuyButton" type="TouchScreenButton" parent="."]
+position = Vector2(816, 248)
+scale = Vector2(0.52, 0.65)
+texture_normal = ExtResource("2_2t8mv")
 
 [node name="VirtualGuy" type="AnimatedSprite2D" parent="VirtualGuyButton"]
-position = Vector2(920, 296)
-scale = Vector2(7, 8.017)
+position = Vector2(200, 73.8461)
+scale = Vector2(13.4615, 12.3338)
 sprite_frames = SubResource("SpriteFrames_gp0ls")
 animation = &"Idle"
 frame_progress = 0.198026
+
+[connection signal="pressed" from="FrogManButton" to="." method="_on_frog_man_button_pressed"]
+[connection signal="pressed" from="MaskDudeButton" to="." method="_on_mask_dude_button_pressed"]
+[connection signal="pressed" from="PinkManButton" to="." method="_on_pink_man_button_pressed"]
+[connection signal="pressed" from="VirtualGuyButton" to="." method="_on_virtual_guy_button_pressed"]
