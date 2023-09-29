@@ -44,9 +44,12 @@ func _process(delta):
 
 	move_and_slide()
 	var collision = get_last_slide_collision()
-	if not is_hit and collision and TRAP_GROUPS.has(collision.get_collider().get_name()):
-		is_hit = true
-		print("Got hit")
+
+	if not is_hit and collision:
+		for group in collision.get_collider().get_groups():
+			if TRAP_GROUPS.has(group):
+				is_hit = true
+				print("Got hit")
 
 	anim_handler.handle_animation(anim_player, velocity, is_hit)
 
