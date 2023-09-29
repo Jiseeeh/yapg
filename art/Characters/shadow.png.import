@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjgtojvhqtn60"
-path="res://.godot/imported/Hit (32x32).png-934881faf6a9d4f6523f31256896f652.ctex"
+uid="uid://g46odloc5es0"
+path="res://.godot/imported/shadow.png-9f2f34ff6a01b993f2f895d8b13efdee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/FrogMan/Hit (32x32).png"
-dest_files=["res://.godot/imported/Hit (32x32).png-934881faf6a9d4f6523f31256896f652.ctex"]
+source_file="res://art/Characters/shadow.png"
+dest_files=["res://.godot/imported/shadow.png-9f2f34ff6a01b993f2f895d8b13efdee.ctex"]
 
 [params]
 

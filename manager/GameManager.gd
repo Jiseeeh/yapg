@@ -3,6 +3,7 @@ extends Node
 var player_health: int = 10
 var player_gold: int = 0
 var current_world_level: int = 1
+var character = ""
 
 const SAVE_PATH = "user://savegame.bin"
 

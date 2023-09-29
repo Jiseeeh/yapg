@@ -3,11 +3,12 @@ extends Node
 
 var collectible: Object
 var collectible_gold: int = 5
+var characters = ["FrogMan", "MaskDude", "PinkMan", "VirtualGuy"]
 
 
 func handle_on_body_entered(body: Node2D):
 	# TODO: Change to character if multiple chars is supported
-	if body.name == "FrogMan":
+	if characters.has(body.name):
 		print("Collected gold: %s" % str(collectible_gold))
 		GameManager.player_gold += collectible_gold
 		GameManager.save_game()

@@ -10,6 +10,7 @@ var hit_cooldown = 0.62
 var elapsed_time_since_last_hit = 0.0
 var is_hit = false
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var anim_handler: AnimationHandler = AnimationHandler.new()
 
 
 func _process(delta):
@@ -17,7 +18,7 @@ func _process(delta):
 		print("Cooling down")
 		elapsed_time_since_last_hit += delta
 		if elapsed_time_since_last_hit > hit_cooldown:
-			print("Can be hit again")
+			print("Can be hit again") 
 			is_hit = false
 			elapsed_time_since_last_hit = 0.0
 
@@ -43,31 +44,14 @@ func _process(delta):
 
 	move_and_slide()
 	var collision = get_last_slide_collision()
-	if not is_hit and collision and TRAP_GROUPS.has(collision.get_collider().get_name()):
-		is_hit = true
-		print("Got hit")
 
-	update_animation()
+	if not is_hit and collision:
+		for group in collision.get_collider().get_groups():
+			if TRAP_GROUPS.has(group):
+				is_hit = true
+				print("Got hit")
 
-
-func update_animation():
-	# play animation hit one time only is hit
-	if is_hit:
-		anim_player.play("Hit")
-		return
-
-	# if not moving
-	if velocity == Vector2.ZERO:
-		anim_player.play("Idle")
-	# moving and is on floor
-	elif velocity.x and is_on_floor():
-		anim_player.play("Run")
-	# jumping
-	elif not is_on_floor():
-		if velocity.y > 0:
-			anim_player.play("Fall")
-		else:
-			anim_player.play("Jump")
+	anim_handler.handle_animation(anim_player, velocity, is_hit)
 
 
 func handle_on_level_complete():

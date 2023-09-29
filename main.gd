@@ -7,7 +7,7 @@ func _ready():
 
 func _on_play_button_pressed():
 	# TODO: move to world_level select
-	get_tree().change_scene_to_file("res://levels/level_select.tscn")
+	get_tree().change_scene_to_file("res://levels/character_select.tscn")
 
 
 func _on_quit_button_pressed():
