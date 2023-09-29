@@ -11,18 +11,8 @@ var player_character: PackedScene
 
 func _ready():
 	level_handler.update_collected_fruits($WorldControls/CollectedFruitsLabel)
-	print(GameManager.character)
-	match GameManager.character:
-		"FrogMan":
-			player_character = load("res://characters/FrogMan/frog_man.tscn")
-		"MaskDude":
-			player_character = load("res://characters/MaskDude/mask_dude.tscn")
-		"PinkMan":
-			player_character = load("res://characters/PinkMan/pink_man.tscn")
-		"VirtualGuy":
-			player_character = load("res://characters/VirtualGuy/virtual_guy.tscn")
 
-	var player = player_character.instantiate()
+	var player = GameManager.get_character_node()
 	player.position = STARTING_POSITION
 	# connect level complete signal to player character
 	level_complete.connect(player.handle_on_level_complete)
