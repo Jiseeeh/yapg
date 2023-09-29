@@ -31,3 +31,21 @@ func load_game():
 				player_health = current_line["player_health"]
 				player_gold = current_line["player_gold"]
 				current_world_level = current_line["current_world_level"]
+
+
+func get_character_node() -> CharacterBody2D:
+	var character_scene = null
+
+	match character:
+		"FrogMan":
+			character_scene = load("res://characters/FrogMan/frog_man.tscn")
+		"MaskDude":
+			character_scene = load("res://characters/MaskDude/mask_dude.tscn")
+		"PinkMan":
+			character_scene = load("res://characters/PinkMan/pink_man.tscn")
+		"VirtualGuy":
+			character_scene = load("res://characters/VirtualGuy/virtual_guy.tscn")
+
+	var character_node = character_scene.instantiate()
+
+	return character_node
