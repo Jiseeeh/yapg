@@ -1,5 +1,4 @@
 class_name AnimationHandler
-extends CharacterBody2D
 
 
 func handle_animation(anim_player: AnimationPlayer, player_velocity: Vector2, is_hit: bool) -> void:
@@ -12,10 +11,10 @@ func handle_animation(anim_player: AnimationPlayer, player_velocity: Vector2, is
 	if player_velocity == Vector2.ZERO:
 		anim_player.play("Idle")
 	# moving and is on floor
-	elif player_velocity.x and is_on_floor():
+	elif player_velocity.x and player_velocity.y == 0:
 		anim_player.play("Run")
 	# jumping
-	elif not is_on_floor():
+	elif not player_velocity.y == 0:
 		if player_velocity.y > 0:
 			anim_player.play("Fall")
 		else:
