@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfngvh3u0h3go"]
+[gd_scene load_steps=14 format=3 uid="uid://cfngvh3u0h3go"]
 
-[ext_resource type="PackedScene" uid="uid://bpootygaddh0o" path="res://characters/FrogMan/frog_man.tscn" id="1_wooao"]
 [ext_resource type="Script" path="res://levels/01/WorldOne.gd" id="1_ypdtr"]
 [ext_resource type="Texture2D" uid="uid://cupkqbgpubfx3" path="res://art/Terrain/Terrain (16x16).png" id="2_11a5m"]
 [ext_resource type="PackedScene" uid="uid://6lwep2tkx45m" path="res://collectibles/Apple/apple.tscn" id="3_2k27i"]
@@ -592,9 +591,6 @@ script = ExtResource("1_ypdtr")
 metadata/_edit_vertical_guides_ = []
 metadata/_edit_horizontal_guides_ = []
 
-[node name="FrogMan" parent="." instance=ExtResource("1_wooao")]
-position = Vector2(34, 280)
-
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(75, 484)
 tile_set = SubResource("TileSet_iij0g")
@@ -651,6 +647,5 @@ offset_bottom = 61.0
 theme_override_font_sizes/font_size = 21
 text = "1/2"
 
-[connection signal="level_complete" from="." to="FrogMan" method="handle_on_level_complete"]
 [connection signal="pressed" from="WorldControls/BackButton/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="WorldControls/RestartButton/restart_button" to="." method="_on_restart_button_pressed"]
