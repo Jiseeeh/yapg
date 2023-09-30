@@ -10,6 +10,9 @@ var player_character: PackedScene
 
 
 func _ready():
+	# inject sound effects
+	SoundManager.inject_stream_players()
+	SoundManager.play_bg_music()
 	# reset player health
 	GameManager.player_health = 3
 	level_handler.update_collected_fruits($WorldControls/CollectedFruitsLabel)
@@ -39,6 +42,8 @@ func _process(_delta):
 		await get_tree().create_timer(1.5).timeout
 		$Popup.visible = false
 
+		# stop the background music
+		SoundManager.stop_bg_music()
 		# show the level select screen
 		get_tree().change_scene_to_file("res://levels/level_select.tscn")
 
@@ -48,4 +53,5 @@ func _on_restart_button_pressed():
 
 
 func _on_back_button_pressed():
+	SoundManager.stop_bg_music()
 	get_tree().change_scene_to_file("res://levels/level_select.tscn")
