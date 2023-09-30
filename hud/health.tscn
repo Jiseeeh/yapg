@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://rdrlt2frqfa7"]
+
+[ext_resource type="Texture2D" uid="uid://ctojvdi526w2p" path="res://art/Heart/Pixel Heart Sprite Sheet 32x32.png" id="1_r6agh"]
+
+[sub_resource type="GDScript" id="GDScript_6a0hm"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	var player_health = GameManager.player_health
+	
+	if player_health == 3:
+		$HealthThree.play(\"Filled\")
+		$HealthTwo.play(\"Filled\")
+		$HealthOne.play(\"Filled\")
+	elif player_health == 2:
+		$HealthThree.play(\"Empty\")
+		$HealthTwo.play(\"Filled\")
+		$HealthOne.play(\"Filled\")
+	elif player_health == 1:
+		$HealthThree.play(\"Empty\")
+		$HealthTwo.play(\"Empty\")
+		$HealthOne.play(\"Filled\")
+	else:
+		$HealthThree.play(\"Empty\")
+		$HealthTwo.play(\"Empty\")
+		$HealthOne.play(\"Empty\")
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ypkd"]
+atlas = ExtResource("1_r6agh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfgxr"]
+atlas = ExtResource("1_r6agh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ca8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ypkd")
+}],
+"loop": true,
+"name": &"Empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfgxr")
+}],
+"loop": true,
+"name": &"Filled",
+"speed": 5.0
+}]
+
+[node name="Health" type="CanvasLayer"]
+script = SubResource("GDScript_6a0hm")
+
+[node name="HealthOne" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 24)
+sprite_frames = SubResource("SpriteFrames_5ca8p")
+animation = &"Filled"
+
+[node name="HealthTwo" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 24)
+sprite_frames = SubResource("SpriteFrames_5ca8p")
+animation = &"Filled"
+
+[node name="HealthThree" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 24)
+sprite_frames = SubResource("SpriteFrames_5ca8p")
+animation = &"Filled"

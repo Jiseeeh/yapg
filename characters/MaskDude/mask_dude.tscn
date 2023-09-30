@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b1hq7v43k0yn8"]
+[gd_scene load_steps=48 format=3 uid="uid://b1hq7v43k0yn8"]
 
 [ext_resource type="Script" path="res://characters/MaskDude/mask_dude.gd" id="1_4ta7u"]
 [ext_resource type="Texture2D" uid="uid://crg8ajkhodqgw" path="res://art/Characters/Mask Dude/Fall (32x32).png" id="1_bpse3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://obvl4ywhw0id" path="res://art/Characters/Mask Dude/Jump (32x32).png" id="4_stdu7"]
 [ext_resource type="Texture2D" uid="uid://d1kh1thsuqlat" path="res://art/Characters/Mask Dude/Run (32x32).png" id="5_34ebx"]
 [ext_resource type="PackedScene" uid="uid://sxw3om14llim" path="res://hud/controls.tscn" id="6_a3g4n"]
+[ext_resource type="PackedScene" uid="uid://rdrlt2frqfa7" path="res://hud/health.tscn" id="8_awrm7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ep27"]
 
@@ -454,3 +455,5 @@ limit_top = 0
 limit_right = 1153
 
 [node name="Controls" parent="." instance=ExtResource("6_a3g4n")]
+
+[node name="Health" parent="." instance=ExtResource("8_awrm7")]

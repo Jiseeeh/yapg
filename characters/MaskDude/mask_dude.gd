@@ -18,7 +18,7 @@ func _process(delta):
 		print("Cooling down")
 		elapsed_time_since_last_hit += delta
 		if elapsed_time_since_last_hit > hit_cooldown:
-			print("Can be hit again") 
+			print("Can be hit again")
 			is_hit = false
 			elapsed_time_since_last_hit = 0.0
 
@@ -45,10 +45,17 @@ func _process(delta):
 	move_and_slide()
 	var collision = get_last_slide_collision()
 
+	# TODO: Make reusable since all character use this
 	if not is_hit and collision:
 		for group in collision.get_collider().get_groups():
 			if TRAP_GROUPS.has(group):
 				is_hit = true
+				GameManager.player_health -= 1
+				if GameManager.player_health <= 0:
+					# wait for hit animation to finish
+					await get_tree().create_timer(0.62).timeout
+					get_tree().reload_current_scene()
+					return
 				print("Got hit")
 
 	anim_handler.handle_animation(anim_player, velocity, is_hit)

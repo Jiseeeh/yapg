@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://d031m64epoiyr"]
+[gd_scene load_steps=48 format=3 uid="uid://d031m64epoiyr"]
 
 [ext_resource type="Script" path="res://characters/VirtualGuy/virtual_guy.gd" id="1_efccs"]
 [ext_resource type="Texture2D" uid="uid://tkcxn7uc7kd4" path="res://art/Characters/Virtual Guy/Fall (32x32).png" id="1_mn2hi"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d3b46qkoks6mn" path="res://art/Characters/Virtual Guy/Idle (32x32).png" id="3_2l2e4"]
 [ext_resource type="Texture2D" uid="uid://fqokml5ql3ql" path="res://art/Characters/Virtual Guy/Run (32x32).png" id="5_gusr1"]
 [ext_resource type="PackedScene" uid="uid://sxw3om14llim" path="res://hud/controls.tscn" id="6_db80c"]
+[ext_resource type="PackedScene" uid="uid://rdrlt2frqfa7" path="res://hud/health.tscn" id="8_ryqx2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s3vbx"]
 
@@ -455,3 +456,5 @@ limit_top = 0
 limit_right = 1153
 
 [node name="Controls" parent="." instance=ExtResource("6_db80c")]
+
+[node name="Health" parent="." instance=ExtResource("8_ryqx2")]
