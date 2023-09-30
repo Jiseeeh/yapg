@@ -10,6 +10,8 @@ var player_character: PackedScene
 
 
 func _ready():
+	# reset player health
+	GameManager.player_health = 3
 	level_handler.update_collected_fruits($WorldControls/CollectedFruitsLabel)
 
 	var player = GameManager.get_character_node()
