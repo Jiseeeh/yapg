@@ -49,6 +49,7 @@ func _process(delta):
 	if not is_hit and collision:
 		for group in collision.get_collider().get_groups():
 			if TRAP_GROUPS.has(group):
+				SoundManager.play_hit_music()
 				is_hit = true
 				GameManager.player_health -= 1
 				if GameManager.player_health <= 0:
