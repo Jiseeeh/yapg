@@ -6,17 +6,16 @@ var collectible_gold: int = 5
 var characters = ["FrogMan", "MaskDude", "PinkMan", "VirtualGuy"]
 
 
-func handle_on_body_entered(body: Node2D):
-	# TODO: Change to character if multiple chars is supported
+func handle_on_body_entered(body: Node2D) -> void:
 	if characters.has(body.name):
 		print("Collected gold: %s" % str(collectible_gold))
+		SoundManager.play_collect_music()
 		GameManager.player_gold += collectible_gold
 		GameManager.save_game()
 		collectible_tween()
 
 
 func collectible_tween() -> void:
-	# TODO: play sound collected
 	var pos_tween = get_tree().create_tween()
 	var opac_tween = get_tree().create_tween()
 	pos_tween.tween_property(collectible, "position", collectible.position - Vector2(0, 40), 1)
