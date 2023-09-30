@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://sxw3om14llim"]
+[gd_scene load_steps=7 format=3 uid="uid://sxw3om14llim"]
 
 [ext_resource type="Texture2D" uid="uid://bobu0ofl21jv6" path="res://art/Buttons/left.png" id="1_5gow6"]
 [ext_resource type="Texture2D" uid="uid://cc7od4y7p7vwy" path="res://art/Buttons/right.png" id="2_ca6av"]
+[ext_resource type="Texture2D" uid="uid://mbgivv6prenl" path="res://art/Buttons/left-pushed.png" id="2_jc35a"]
 [ext_resource type="Texture2D" uid="uid://nd7f8hbdvk5b" path="res://art/Buttons/up.png" id="3_v66r3"]
+[ext_resource type="Texture2D" uid="uid://c32xw2s3e6hcc" path="res://art/Buttons/right-pushed.png" id="4_t27mp"]
+[ext_resource type="Texture2D" uid="uid://dhlayh2by70wr" path="res://art/Buttons/up-pushed.png" id="6_tvjba"]
 
 [node name="Controls" type="CanvasLayer"]
 
@@ -10,16 +13,19 @@
 position = Vector2(9, 532)
 scale = Vector2(7.25, 7.188)
 texture_normal = ExtResource("1_5gow6")
+texture_pressed = ExtResource("2_jc35a")
 action = "move_left"
 
 [node name="Right" type="TouchScreenButton" parent="."]
 position = Vector2(177, 532)
 scale = Vector2(7.25, 7.188)
 texture_normal = ExtResource("2_ca6av")
+texture_pressed = ExtResource("4_t27mp")
 action = "move_right"
 
 [node name="Jump" type="TouchScreenButton" parent="."]
 position = Vector2(1032, 532)
 scale = Vector2(7.25, 7.188)
 texture_normal = ExtResource("3_v66r3")
+texture_pressed = ExtResource("6_tvjba")
 action = "jump"
