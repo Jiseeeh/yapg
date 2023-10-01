@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0qlarxuihfke" path="res://art/Buttons/Restart.png" id="3_ihtt8"]
 [ext_resource type="PackedScene" uid="uid://b47yfx7iq58vy" path="res://hud/popup.tscn" id="4_qwvic"]
 [ext_resource type="PackedScene" uid="uid://dv311tkdlwt7l" path="res://traps/spike.tscn" id="5_fthby"]
-[ext_resource type="PackedScene" uid="uid://c6kwja716aoil" path="res://traps/saw.tscn" id="6_lpqqy"]
+[ext_resource type="PackedScene" uid="uid://c6kwja716aoil" path="res://traps/Saw/saw.tscn" id="6_lpqqy"]
 [ext_resource type="PackedScene" uid="uid://6lwep2tkx45m" path="res://collectibles/Apple/apple.tscn" id="7_por1h"]
 [ext_resource type="PackedScene" uid="uid://c4cfaml7kqfi4" path="res://collectibles/Banana/banana.tscn" id="8_apehc"]
 [ext_resource type="PackedScene" uid="uid://mw1iyljkiiot" path="res://traps/Saw/moving_saw.tscn" id="9_t4swd"]
