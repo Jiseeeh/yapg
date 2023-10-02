@@ -1,17 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://buegxr451xur4"]
+[gd_scene load_steps=18 format=3 uid="uid://buegxr451xur4"]
 
-[ext_resource type="Script" path="res://levels/02/WorldTwo.gd" id="1_ti72b"]
-[ext_resource type="Texture2D" uid="uid://cupkqbgpubfx3" path="res://art/Terrain/Terrain (16x16).png" id="2_gxua4"]
-[ext_resource type="Texture2D" uid="uid://c0k56t2tlfbia" path="res://art/Buttons/Back.png" id="3_mvloi"]
-[ext_resource type="Texture2D" uid="uid://0qlarxuihfke" path="res://art/Buttons/Restart.png" id="4_jrt42"]
-[ext_resource type="PackedScene" uid="uid://b47yfx7iq58vy" path="res://hud/popup.tscn" id="4_vuv8l"]
-[ext_resource type="PackedScene" uid="uid://dv311tkdlwt7l" path="res://traps/spike.tscn" id="5_ej2ok"]
+[ext_resource type="Script" path="res://levels/02/WorldTwo.gd" id="1_mj28q"]
+[ext_resource type="Texture2D" uid="uid://cupkqbgpubfx3" path="res://art/Terrain/Terrain (16x16).png" id="1_nsxi8"]
+[ext_resource type="Texture2D" uid="uid://c0k56t2tlfbia" path="res://art/Buttons/Back.png" id="2_iiwmj"]
+[ext_resource type="Texture2D" uid="uid://0qlarxuihfke" path="res://art/Buttons/Restart.png" id="3_ihtt8"]
+[ext_resource type="PackedScene" uid="uid://b47yfx7iq58vy" path="res://hud/popup.tscn" id="4_qwvic"]
+[ext_resource type="PackedScene" uid="uid://dv311tkdlwt7l" path="res://traps/spike.tscn" id="5_fthby"]
 [ext_resource type="PackedScene" uid="uid://c6kwja716aoil" path="res://traps/Saw/saw.tscn" id="6_lpqqy"]
-[ext_resource type="PackedScene" uid="uid://6lwep2tkx45m" path="res://collectibles/Apple/apple.tscn" id="7_1uy6r"]
-[ext_resource type="PackedScene" uid="uid://c4cfaml7kqfi4" path="res://collectibles/Banana/banana.tscn" id="8_hgjuh"]
-[ext_resource type="PackedScene" uid="uid://mw1iyljkiiot" path="res://traps/Saw/moving_saw.tscn" id="10_ly68y"]
-[ext_resource type="Texture2D" uid="uid://d1idlgmjlicdt" path="res://art/Background/clouadbackground.png" id="11_aehs2"]
-[ext_resource type="Texture2D" uid="uid://cnutuukny70mi" path="res://art/Background/mountain.png" id="12_qstjc"]
+[ext_resource type="PackedScene" uid="uid://6lwep2tkx45m" path="res://collectibles/Apple/apple.tscn" id="7_por1h"]
+[ext_resource type="PackedScene" uid="uid://c4cfaml7kqfi4" path="res://collectibles/Banana/banana.tscn" id="8_apehc"]
+[ext_resource type="PackedScene" uid="uid://mw1iyljkiiot" path="res://traps/Saw/moving_saw.tscn" id="9_t4swd"]
+[ext_resource type="PackedScene" uid="uid://dqk652fpo4rdd" path="res://traps/SpikedBall/spiked_ball.tscn" id="11_mh5qi"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_2nq8s"]
 tile_data = PackedInt32Array(0, 983040, 4, 65536, 983040, 5, 131072, 983040, 5, 196608, 983040, 5, 262144, 983040, 5, 327680, 983040, 5, 393216, 983040, 5, 458752, 983040, 5, 524288, 983040, 5, 589824, 983040, 5, 655360, 983040, 5, 720896, 983040, 5, 786432, 983040, 5, 851968, 983040, 5, 917504, 983040, 5, 983040, 983040, 5, 1048576, 983040, 5, 1114112, 983040, 5, 1179648, 983040, 5, 1245184, 983040, 5, 1310720, 983040, 5, 1376256, 983040, 5, 1441792, 983040, 5, 1507328, 983040, 5, 1572864, 983040, 5, 1638400, 983040, 5, 1703936, 983040, 5, 1769472, 983040, 5, 1835008, 983040, 5, 1900544, 983040, 5, 1966080, 983040, 5, 2031616, 983040, 6)
@@ -724,24 +723,8 @@ position = Vector2(877, 147)
 [node name="MovingSaw4" parent="." instance=ExtResource("9_t4swd")]
 position = Vector2(978, 520)
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(1180, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-z_index = -1
-position = Vector2(592, 308)
-texture = ExtResource("11_aehs2")
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.05, 1)
-motion_mirroring = Vector2(1180, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(586, 309)
-texture = ExtResource("12_qstjc")
+[node name="SpikedBall" parent="." instance=ExtResource("11_mh5qi")]
+position = Vector2(226, 50)
 
 [connection signal="pressed" from="WorldControls/BackButton/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="WorldControls/RestartButton/restart_button" to="." method="_on_restart_button_pressed"]
