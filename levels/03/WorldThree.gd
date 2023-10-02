@@ -27,6 +27,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	$ParallaxBackground/movingClouds.motion_offset.x -= 50 * _delta
+	$ParallaxBackground/cloudsBackground.motion_offset.x -= 20 * _delta
+	$ParallaxBackground/cloudsForeground.motion_offset.x -= 10 * _delta
 	level_handler.update_collected_fruits($WorldControls/CollectedFruitsLabel)
 
 	if level_handler.has_collected_all_fruits():

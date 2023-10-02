@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cuua5corf1lgy"]
+[gd_scene load_steps=20 format=3 uid="uid://cuua5corf1lgy"]
 
 [ext_resource type="Script" path="res://levels/03/WorldThree.gd" id="1_3wxd2"]
 [ext_resource type="Texture2D" uid="uid://cupkqbgpubfx3" path="res://art/Terrain/Terrain (16x16).png" id="1_iebqm"]
@@ -12,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://c0k56t2tlfbia" path="res://art/Buttons/Back.png" id="10_5ofjw"]
 [ext_resource type="Texture2D" uid="uid://0qlarxuihfke" path="res://art/Buttons/Restart.png" id="11_7kh3r"]
 [ext_resource type="PackedScene" uid="uid://b47yfx7iq58vy" path="res://hud/popup.tscn" id="12_x6adx"]
+[ext_resource type="Texture2D" uid="uid://cxkik1fx10tup" path="res://art/Background/base.png" id="13_2xr0n"]
+[ext_resource type="Texture2D" uid="uid://bf33nd7q3sb5l" path="res://art/Background/base-cloud.png" id="14_ins57"]
+[ext_resource type="Texture2D" uid="uid://d1hfp5nxxyr58" path="res://art/Background/foreground-cloud.png" id="15_gmt8g"]
+[ext_resource type="Texture2D" uid="uid://oa7uk1lsfodb" path="res://art/Background/movin-clouds.png" id="16_5smpl"]
+[ext_resource type="Texture2D" uid="uid://dsu0kp0ecf0wl" path="res://art/Background/mountain.png" id="17_fel0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deayd"]
 texture = ExtResource("1_iebqm")
@@ -780,6 +785,49 @@ text = "1/2"
 
 [node name="Popup" parent="." instance=ExtResource("12_x6adx")]
 visible = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="base" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(0.5, 0.5)
+motion_scale = Vector2(0.05, 1)
+motion_mirroring = Vector2(1180, 0)
+
+[node name="clouds" type="Sprite2D" parent="ParallaxBackground/base"]
+position = Vector2(-85, 309)
+texture = ExtResource("13_2xr0n")
+
+[node name="cloudsForeground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1180, 0)
+
+[node name="clouds-2" type="Sprite2D" parent="ParallaxBackground/cloudsForeground"]
+position = Vector2(-85, 309)
+texture = ExtResource("14_ins57")
+
+[node name="cloudsBackground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(1180, 0)
+
+[node name="clouds-1" type="Sprite2D" parent="ParallaxBackground/cloudsBackground"]
+position = Vector2(-85, 309)
+texture = ExtResource("15_gmt8g")
+
+[node name="movingClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 1)
+motion_mirroring = Vector2(1180, 0)
+
+[node name="clouds" type="Sprite2D" parent="ParallaxBackground/movingClouds"]
+position = Vector2(-85, 309)
+texture = ExtResource("16_5smpl")
+
+[node name="mountain" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.08, 1)
+motion_mirroring = Vector2(1180, 0)
+
+[node name="mountains" type="Sprite2D" parent="ParallaxBackground/mountain"]
+position = Vector2(-83, 309)
+texture = ExtResource("17_fel0u")
 
 [connection signal="pressed" from="WorldControls/BackButton/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="WorldControls/RestartButton/restart_button" to="." method="_on_restart_button_pressed"]
