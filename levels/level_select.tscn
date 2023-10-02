@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://djxg4lcc8xcvv"]
+
+[ext_resource type="Texture2D" uid="uid://bkvvoxtyk2r4q" path="res://art/Levels/01.png" id="1_7k2gq"]
+[ext_resource type="Texture2D" uid="uid://dou4euea74olp" path="res://art/Levels/02.png" id="2_ah680"]
+[ext_resource type="Texture2D" uid="uid://iji1lwtewy6u" path="res://art/Levels/50.png" id="6_kbhgo"]
+[ext_resource type="Texture2D" uid="uid://c0k56t2tlfbia" path="res://art/Buttons/Back.png" id="8_mst7o"]
+
+[sub_resource type="GDScript" id="GDScript_vn1yp"]
+script/source = "extends Node2D
+
+var current_world_level = GameManager.current_world_level
+
+
+func _ready():
+	# get all children of this node
+	var children = get_children()
+
+	for i in range(current_world_level):
+		# increase the alpha value of the unlocked levels
+		# to show that they are unlocked
+		children[i].modulate.a = 255
+
+
+func is_level_unlocked(level: int) -> bool:
+	return current_world_level >= level
+
+
+func _on__pressed_01():
+	if is_level_unlocked(1):
+		get_tree().change_scene_to_file(\"res://levels/01/WorldOne.tscn\")
+
+
+func _on__pressed_02():
+	if is_level_unlocked(2):
+		get_tree().change_scene_to_file(\"res://levels/02/WorldTwo.tscn\")
+
+
+func _on__pressed_final():
+	if is_level_unlocked(3):
+		get_tree().change_scene_to_file(\"res://levels/03/WorldThree.tscn\")
+
+
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file(\"res://main.tscn\")
+"
+
+[node name="LevelSelect" type="Node2D"]
+script = SubResource("GDScript_vn1yp")
+
+[node name="01" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.556863)
+position = Vector2(96, 224)
+scale = Vector2(11.3684, 12.4118)
+texture_normal = ExtResource("1_7k2gq")
+
+[node name="02" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.556863)
+position = Vector2(456, 224)
+scale = Vector2(11.368, 12.412)
+texture_normal = ExtResource("2_ah680")
+
+[node name="06" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.556863)
+position = Vector2(816, 224)
+scale = Vector2(11.368, 12.412)
+texture_normal = ExtResource("6_kbhgo")
+
+[node name="back_button" type="TouchScreenButton" parent="."]
+position = Vector2(1061, 0)
+scale = Vector2(6.33333, 5.6875)
+texture_normal = ExtResource("8_mst7o")
+
+[connection signal="pressed" from="01" to="." method="_on__pressed_01"]
+[connection signal="pressed" from="02" to="." method="_on__pressed_02"]
+[connection signal="pressed" from="06" to="." method="_on__pressed_final"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
