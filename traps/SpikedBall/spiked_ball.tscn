@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqk652fpo4rdd"]
+
+[ext_resource type="Texture2D" uid="uid://by3jyx0wj6uwn" path="res://art/Traps/Spiked Ball/Chain.png" id="1_hocei"]
+[ext_resource type="Script" path="res://traps/SpikedBall/spiked_ball.gd" id="1_qmo0v"]
+[ext_resource type="Texture2D" uid="uid://bie42n4nijqel" path="res://art/Traps/Spiked Ball/Spiked Ball.png" id="2_b3mbp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r1w5t"]
+radius = 12.3934
+
+[node name="SpikedBall" type="StaticBody2D" groups=["Spike"]]
+script = ExtResource("1_qmo0v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.534969, 52.2507)
+shape = SubResource("CircleShape2D_r1w5t")
+
+[node name="Chain" type="Sprite2D" parent="."]
+texture = ExtResource("1_hocei")
+
+[node name="Chain2" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+texture = ExtResource("1_hocei")
+
+[node name="Chain3" type="Sprite2D" parent="."]
+position = Vector2(0, 14)
+texture = ExtResource("1_hocei")
+
+[node name="Chain4" type="Sprite2D" parent="."]
+position = Vector2(0, 21)
+texture = ExtResource("1_hocei")
+
+[node name="Chain5" type="Sprite2D" parent="."]
+position = Vector2(0, 28)
+texture = ExtResource("1_hocei")
+
+[node name="Chain6" type="Sprite2D" parent="."]
+position = Vector2(0, 35)
+texture = ExtResource("1_hocei")
+
+[node name="Chain7" type="Sprite2D" parent="."]
+position = Vector2(0, 42)
+texture = ExtResource("1_hocei")
+
+[node name="Chain8" type="Sprite2D" parent="."]
+position = Vector2(0, 49)
+texture = ExtResource("1_hocei")
+
+[node name="Chain9" type="Sprite2D" parent="."]
+position = Vector2(0, 56)
+texture = ExtResource("1_hocei")
+
+[node name="SpikedBall" type="Sprite2D" parent="."]
+position = Vector2(0, 51)
+texture = ExtResource("2_b3mbp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
