@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://buegxr451xur4"]
+[gd_scene load_steps=22 format=3 uid="uid://buegxr451xur4"]
 
 [ext_resource type="Script" path="res://levels/02/WorldTwo.gd" id="1_mj28q"]
 [ext_resource type="Texture2D" uid="uid://cupkqbgpubfx3" path="res://art/Terrain/Terrain (16x16).png" id="1_nsxi8"]
@@ -10,8 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://6lwep2tkx45m" path="res://collectibles/Apple/apple.tscn" id="7_por1h"]
 [ext_resource type="PackedScene" uid="uid://c4cfaml7kqfi4" path="res://collectibles/Banana/banana.tscn" id="8_apehc"]
 [ext_resource type="PackedScene" uid="uid://mw1iyljkiiot" path="res://traps/Saw/moving_saw.tscn" id="9_t4swd"]
-[ext_resource type="Texture2D" uid="uid://b8u527dkw0qgo" path="res://art/Background/clouadbackground.png" id="11_kdq8l"]
+[ext_resource type="Texture2D" uid="uid://cxkik1fx10tup" path="res://art/Background/base.png" id="11_v4553"]
+[ext_resource type="Texture2D" uid="uid://bf33nd7q3sb5l" path="res://art/Background/base-cloud.png" id="12_8mrjx"]
 [ext_resource type="Texture2D" uid="uid://dsu0kp0ecf0wl" path="res://art/Background/mountain.png" id="12_otp5i"]
+[ext_resource type="Texture2D" uid="uid://d1hfp5nxxyr58" path="res://art/Background/foreground-cloud.png" id="13_fubtm"]
+[ext_resource type="Texture2D" uid="uid://oa7uk1lsfodb" path="res://art/Background/movin-clouds.png" id="14_3y3c2"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_2nq8s"]
 tile_data = PackedInt32Array(0, 983040, 4, 65536, 983040, 5, 131072, 983040, 5, 196608, 983040, 5, 262144, 983040, 5, 327680, 983040, 5, 393216, 983040, 5, 458752, 983040, 5, 524288, 983040, 5, 589824, 983040, 5, 655360, 983040, 5, 720896, 983040, 5, 786432, 983040, 5, 851968, 983040, 5, 917504, 983040, 5, 983040, 983040, 5, 1048576, 983040, 5, 1114112, 983040, 5, 1179648, 983040, 5, 1245184, 983040, 5, 1310720, 983040, 5, 1376256, 983040, 5, 1441792, 983040, 5, 1507328, 983040, 5, 1572864, 983040, 5, 1638400, 983040, 5, 1703936, 983040, 5, 1769472, 983040, 5, 1835008, 983040, 5, 1900544, 983040, 5, 1966080, 983040, 5, 2031616, 983040, 6)
@@ -726,19 +729,44 @@ position = Vector2(978, 520)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="base" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2(0.5, 0.5)
 motion_scale = Vector2(0.05, 1)
 motion_mirroring = Vector2(1180, 0)
 
-[node name="clouds" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="clouds" type="Sprite2D" parent="ParallaxBackground/base"]
 position = Vector2(-85, 309)
-texture = ExtResource("11_kdq8l")
+texture = ExtResource("11_v4553")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="cloudsForeground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1180, 0)
+
+[node name="clouds-2" type="Sprite2D" parent="ParallaxBackground/cloudsForeground"]
+position = Vector2(-85, 309)
+texture = ExtResource("12_8mrjx")
+
+[node name="cloudsBackground" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(1180, 0)
+
+[node name="clouds-1" type="Sprite2D" parent="ParallaxBackground/cloudsBackground"]
+position = Vector2(-85, 309)
+texture = ExtResource("13_fubtm")
+
+[node name="movingClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 1)
+motion_mirroring = Vector2(1180, 0)
+
+[node name="clouds" type="Sprite2D" parent="ParallaxBackground/movingClouds"]
+position = Vector2(-85, 309)
+texture = ExtResource("14_3y3c2")
+
+[node name="mountain" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.08, 1)
 motion_mirroring = Vector2(1180, 0)
 
-[node name="mountains" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="mountains" type="Sprite2D" parent="ParallaxBackground/mountain"]
 position = Vector2(-83, 309)
 texture = ExtResource("12_otp5i")
 

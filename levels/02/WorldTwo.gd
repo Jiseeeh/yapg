@@ -28,7 +28,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	level_handler.update_collected_fruits($WorldControls/CollectedFruitsLabel)
-
+	$ParallaxBackground/movingClouds.motion_offset.x -= 50 * _delta
+	$ParallaxBackground/cloudsBackground.motion_offset.x -= 20 * _delta
+	$ParallaxBackground/cloudsForeground.motion_offset.x -= 10 * _delta
+	
 	if level_handler.has_collected_all_fruits():
 		level_complete.emit()
 
@@ -46,6 +49,7 @@ func _process(_delta):
 		SoundManager.stop_bg_music()
 		# show the level select screen
 		get_tree().change_scene_to_file("res://levels/level_select.tscn")
+		
 
 
 func _on_restart_button_pressed():
