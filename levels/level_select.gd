@@ -28,7 +28,8 @@ func _on__pressed_02():
 
 
 func _on__pressed_final():
-	is_level_unlocked(6)
+	if is_level_unlocked(3):
+		get_tree().change_scene_to_file("res://levels/03/WorldThree.tscn")
 
 
 func _on_back_button_pressed():
