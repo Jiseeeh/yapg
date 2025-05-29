@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://buir3k864ep7x"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_8k8ot"]
+[ext_resource type="Script" uid="uid://duapott720d8m" path="res://main.gd" id="1_8k8ot"]
 [ext_resource type="Texture2D" uid="uid://cupkqbgpubfx3" path="res://art/Terrain/Terrain (16x16).png" id="2_60kua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqxj2"]

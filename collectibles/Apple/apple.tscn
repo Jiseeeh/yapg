@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://6lwep2tkx45m"]
 
-[ext_resource type="Script" path="res://collectibles/Apple/apple.gd" id="1_uax5i"]
+[ext_resource type="Script" uid="uid://0fr5v6yr354q" path="res://collectibles/Apple/apple.gd" id="1_uax5i"]
 [ext_resource type="Texture2D" uid="uid://bbjffca78cq4j" path="res://art/Items/Fruits/Apple.png" id="1_wepqa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dvg1t"]

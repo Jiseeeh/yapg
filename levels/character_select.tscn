@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=3 uid="uid://ccwbmc55sxmpw"]
 
-[ext_resource type="Script" path="res://levels/character_select.gd" id="1_8dhid"]
+[ext_resource type="Script" uid="uid://cjs0cceokw86a" path="res://levels/character_select.gd" id="1_8dhid"]
 [ext_resource type="Texture2D" uid="uid://dnrn0xv3ljce1" path="res://art/Characters/FrogMan/Idle (32x32).png" id="1_10itp"]
 [ext_resource type="Texture2D" uid="uid://g46odloc5es0" path="res://art/Characters/shadow.png" id="2_2t8mv"]
 [ext_resource type="Texture2D" uid="uid://cox8cm50kcx31" path="res://art/Characters/Mask Dude/Idle (32x32).png" id="2_ojc20"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://cfxuart8xbli1"]
 
 [ext_resource type="Texture2D" uid="uid://cpq3tx8jq70tj" path="res://art/Traps/Platforms/Brown Off.png" id="1_0veg6"]
-[ext_resource type="Script" path="res://traps/Platforms/upward_platform.gd" id="1_o6naa"]
+[ext_resource type="Script" uid="uid://b2fuqnh4jbnao" path="res://traps/Platforms/upward_platform.gd" id="1_o6naa"]
 [ext_resource type="Texture2D" uid="uid://cnqjuu7ik15g4" path="res://art/Traps/Platforms/Brown On (32x8).png" id="2_hfw5f"]
 
 [sub_resource type="Curve2D" id="Curve2D_dum5q"]

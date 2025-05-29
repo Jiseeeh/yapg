@@ -1,6 +1,6 @@
 [gd_scene load_steps=48 format=3 uid="uid://d031m64epoiyr"]
 
-[ext_resource type="Script" path="res://characters/VirtualGuy/virtual_guy.gd" id="1_efccs"]
+[ext_resource type="Script" uid="uid://bw3353qqf8qli" path="res://characters/VirtualGuy/virtual_guy.gd" id="1_efccs"]
 [ext_resource type="Texture2D" uid="uid://tkcxn7uc7kd4" path="res://art/Characters/Virtual Guy/Fall (32x32).png" id="1_mn2hi"]
 [ext_resource type="Texture2D" uid="uid://b5n38uewb5uny" path="res://art/Characters/Virtual Guy/Hit (32x32).png" id="2_6h4h7"]
 [ext_resource type="Texture2D" uid="uid://b4k64j7sgdq71" path="res://art/Characters/Virtual Guy/Jump (32x32).png" id="2_aswb5"]
@@ -425,12 +425,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xy235"]
 _data = {
-"Fall": SubResource("Animation_kqvlm"),
-"Hit": SubResource("Animation_n6fjp"),
-"Idle": SubResource("Animation_bmo1y"),
-"Jump": SubResource("Animation_75qt2"),
-"RESET": SubResource("Animation_gh4sv"),
-"Run": SubResource("Animation_osrw0")
+&"Fall": SubResource("Animation_kqvlm"),
+&"Hit": SubResource("Animation_n6fjp"),
+&"Idle": SubResource("Animation_bmo1y"),
+&"Jump": SubResource("Animation_75qt2"),
+&"RESET": SubResource("Animation_gh4sv"),
+&"Run": SubResource("Animation_osrw0")
 }
 
 [node name="VirtualGuy" type="CharacterBody2D"]

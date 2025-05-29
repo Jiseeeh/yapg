@@ -1,6 +1,6 @@
 [gd_scene load_steps=48 format=3 uid="uid://b1hq7v43k0yn8"]
 
-[ext_resource type="Script" path="res://characters/MaskDude/mask_dude.gd" id="1_4ta7u"]
+[ext_resource type="Script" uid="uid://bd6oa3hplt0wk" path="res://characters/MaskDude/mask_dude.gd" id="1_4ta7u"]
 [ext_resource type="Texture2D" uid="uid://crg8ajkhodqgw" path="res://art/Characters/Mask Dude/Fall (32x32).png" id="1_bpse3"]
 [ext_resource type="Texture2D" uid="uid://b2a8or6if4eui" path="res://art/Characters/Mask Dude/Hit (32x32).png" id="2_8ho8p"]
 [ext_resource type="Texture2D" uid="uid://cox8cm50kcx31" path="res://art/Characters/Mask Dude/Idle (32x32).png" id="3_7s8f5"]
@@ -424,12 +424,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bv5p"]
 _data = {
-"Fall": SubResource("Animation_a3tiy"),
-"Hit": SubResource("Animation_khps3"),
-"Idle": SubResource("Animation_30xdk"),
-"Jump": SubResource("Animation_n4sj0"),
-"RESET": SubResource("Animation_mmad7"),
-"Run": SubResource("Animation_wxhcl")
+&"Fall": SubResource("Animation_a3tiy"),
+&"Hit": SubResource("Animation_khps3"),
+&"Idle": SubResource("Animation_30xdk"),
+&"Jump": SubResource("Animation_n4sj0"),
+&"RESET": SubResource("Animation_mmad7"),
+&"Run": SubResource("Animation_wxhcl")
 }
 
 [node name="MaskDude" type="CharacterBody2D"]

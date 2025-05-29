@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://mw1iyljkiiot"]
 
 [ext_resource type="Texture2D" uid="uid://siy42bsihyqv" path="res://art/Traps/Saw/Off.png" id="1_a4gif"]
-[ext_resource type="Script" path="res://traps/Saw/moving_saw.gd" id="1_qh4gm"]
+[ext_resource type="Script" uid="uid://p05nk1jtmgn8" path="res://traps/Saw/moving_saw.gd" id="1_qh4gm"]
 [ext_resource type="Texture2D" uid="uid://vjdf13qnbdf0" path="res://art/Traps/Saw/On (38x38).png" id="2_yuso8"]
 
 [sub_resource type="Curve2D" id="Curve2D_ke7cp"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=48 format=3 uid="uid://bpootygaddh0o"]
 
-[ext_resource type="Script" path="res://characters/FrogMan/frog_man.gd" id="1_52gc7"]
+[ext_resource type="Script" uid="uid://c1q32l8qk3j88" path="res://characters/FrogMan/frog_man.gd" id="1_52gc7"]
 [ext_resource type="Texture2D" uid="uid://dnrn0xv3ljce1" path="res://art/Characters/FrogMan/Idle (32x32).png" id="1_a3sy2"]
 [ext_resource type="Texture2D" uid="uid://cfns5um5re40y" path="res://art/Characters/FrogMan/Fall (32x32).png" id="1_bg1pq"]
 [ext_resource type="Texture2D" uid="uid://bjgtojvhqtn60" path="res://art/Characters/FrogMan/Hit (32x32).png" id="2_cuevg"]
@@ -425,12 +425,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixqnv"]
 _data = {
-"Fall": SubResource("Animation_54ysq"),
-"Hit": SubResource("Animation_xl1cu"),
-"Idle": SubResource("Animation_t4h6j"),
-"Jump": SubResource("Animation_6msww"),
-"RESET": SubResource("Animation_1di2j"),
-"Run": SubResource("Animation_hyi22")
+&"Fall": SubResource("Animation_54ysq"),
+&"Hit": SubResource("Animation_xl1cu"),
+&"Idle": SubResource("Animation_t4h6j"),
+&"Jump": SubResource("Animation_6msww"),
+&"RESET": SubResource("Animation_1di2j"),
+&"Run": SubResource("Animation_hyi22")
 }
 
 [node name="FrogMan" type="CharacterBody2D"]

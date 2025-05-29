@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://ble24m75pkkhp"]
 
-[ext_resource type="Script" path="res://traps/Platforms/sideward_platform.gd" id="1_kkev7"]
+[ext_resource type="Script" uid="uid://bexshwe317p6l" path="res://traps/Platforms/sideward_platform.gd" id="1_kkev7"]
 [ext_resource type="Texture2D" uid="uid://cpq3tx8jq70tj" path="res://art/Traps/Platforms/Brown Off.png" id="1_wqv6r"]
 [ext_resource type="Texture2D" uid="uid://cnqjuu7ik15g4" path="res://art/Traps/Platforms/Brown On (32x8).png" id="2_x2wox"]
 

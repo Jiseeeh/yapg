@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://c4cfaml7kqfi4"]
 
-[ext_resource type="Script" path="res://collectibles/Banana/banana.gd" id="1_n6vbw"]
+[ext_resource type="Script" uid="uid://btjgunxlq3mk" path="res://collectibles/Banana/banana.gd" id="1_n6vbw"]
 [ext_resource type="Texture2D" uid="uid://dfaderx7y2uul" path="res://art/Items/Fruits/Bananas.png" id="1_u81dj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_if52e"]
